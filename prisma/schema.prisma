@@ -19,7 +19,7 @@ model Escola {
   id          Int          @id @default(autoincrement())
   nome        String
   avaliacao   Int
-  imagem      Bytes        @db.Blob
+  image       Bytes        @db.Blob
   latitude    Float
   longitude   Float
   comentarios Comentario[]
@@ -33,6 +33,6 @@ model Comentario {
   escola     Escola   @relation(fields: [id_escola], references: [id])
 }
 
-model Motds {
+model Motd {
   MOTD String @id
 }
