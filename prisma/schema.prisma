@@ -6,3 +6,33 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Escola {
+  id          Int          @id @default(autoincrement())
+  nome        String
+  avaliacao   Int
+  imagem      Bytes        @db.Blob
+  latitude    Float
+  longitude   Float
+  comentarios Comentario[]
+}
+
+model Comentario {
+  id         Int      @id @default(autoincrement())
+  id_escola  Int      @unique
+  comentario String
+  data_hora  DateTime @default(now())
+  escola     Escola   @relation(fields: [id_escola], references: [id])
+}
+
+model Motds {
+  MOTD String @id
+}
