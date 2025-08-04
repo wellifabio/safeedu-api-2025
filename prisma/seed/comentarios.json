@@ -1,20 +1,14 @@
 [
     {
-        "id": "3",
-        "id_escola": "1",
-        "comentario": "Excelente",
-        "data_hora": "2025-06-03 19:52:01"
+        "id_escola": 1,
+        "comentario": "Excelente"
     },
     {
-        "id": "2",
-        "id_escola": "3",
-        "comentario": "Muito boa",
-        "data_hora": "2025-06-03 03:27:57"
+        "id_escola": 2,
+        "comentario": "Muito boa"
     },
     {
-        "id": "1",
-        "id_escola": "3",
-        "comentario": "Muito boa",
-        "data_hora": "2025-06-03 03:23:26"
+        "id_escola": 3,
+        "comentario": "Regular"
     }
 ]

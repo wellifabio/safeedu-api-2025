@@ -9,7 +9,7 @@ datasource db {
 
 model User {
   id        Int      @id @default(autoincrement())
-  nome      String
+  name      String
   email     String   @unique
   password  String
   createdAt DateTime @default(now())
@@ -19,7 +19,7 @@ model Escola {
   id          Int          @id @default(autoincrement())
   nome        String
   avaliacao   Int
-  image       Bytes        @db.Blob
+  image       String @db.LongText
   latitude    Float
   longitude   Float
   comentarios Comentario[]
@@ -27,12 +27,12 @@ model Escola {
 
 model Comentario {
   id         Int      @id @default(autoincrement())
-  id_escola  Int      @unique
+  id_escola  Int
   comentario String
   data_hora  DateTime @default(now())
   escola     Escola   @relation(fields: [id_escola], references: [id])
 }
 
 model Motd {
-  MOTD String @id
+  MOTD String @id @db.VarChar(255)
 }

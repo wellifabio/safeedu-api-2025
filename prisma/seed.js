@@ -3,6 +3,7 @@ const prisma = new PrismaClient();
 const fs = require('fs');
 
 //Importando os dados de arquivo csv para variáveis
+const users = require("./seed/users.json");
 const motds = require("./seed/motds.json");
 const escolas = require("./seed/escolas.json");
 const comentarios = require("./seed/comentarios.json");
@@ -22,6 +23,11 @@ async function main() {
     for (const comentario of comentarios) {
         await prisma.comentario.create({
             data: comentario
+        });
+    }
+    for (const user of users) {
+        await prisma.user.create({
+            data: user
         });
     }
 }

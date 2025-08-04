@@ -5,9 +5,9 @@
 ```bash
 npm install
 ```
-- 2 Abra o XAMPP ou o MAMP e inicie o MySQL.
+- 2 Abra o XAMPP e inicie o MySQL.
 - 3 Crie o arquivo `.env` na raiz do projeto com o seguinte conteúdo:
-```env
+```js
 DATABASE_URL="mysql://root@localhost:3306/safeeduapi?schema=public&timezone=UTC"
 PORT=4000
 JWT_SECRET="my_jwt_secret"

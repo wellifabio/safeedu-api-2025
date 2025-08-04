@@ -2,527 +2,525 @@ type: collection.insomnia.rest/5.0
 name: Scratch Pad
 meta:
   id: wrk_scratchpad
-  created: 1741697361940
-  modified: 1741697361940
+  created: 1743787577856
+  modified: 1743787577856
   description: ""
 collection:
-  - name: API Dummy
+  - name: dummyjson.com
     meta:
-      id: fld_f41d66f2fdae40909973aeb55c5ff0ff
-      created: 1753789269518
-      modified: 1753872092299
-      sortKey: -1753871932842
+      id: fld_64996c65eabb47029944b9e02398f0ae
+      created: 1753097349572
+      modified: 1754050057931
+      sortKey: -1753573298182.25
       description: ""
-  - name: API PlaceHolder
+    scripts:
+      afterResponse: ""
+      preRequest: ""
+  - name: SafeEdu
     meta:
-      id: fld_cd6a50d20c2e42b08b32e98f46c6d606
-      created: 1753789517599
-      modified: 1753872089899
-      sortKey: -1753871932742
+      id: fld_3cae3d9f61bb4da291c4c005cf944e4a
+      created: 1753731947719
+      modified: 1753731947719
+      sortKey: -1753731947719
       description: ""
+    children:
+      - name: Remoto
+        meta:
+          id: fld_fd51d951cc024f139cf24d406a4256db
+          created: 1754337424813
+          modified: 1754337424813
+          sortKey: -1754337424813
+          description: ""
+        children:
+          - url: https://workspace.dinizeotecnologia.com.br/worldskills/jwt/generate_token
+            name: "Endpoint #01"
+            meta:
+              id: req_f71f0974f60b4610b306a4eb941f1eb0
+              created: 1753731952733
+              modified: 1754340130730
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450870
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "fred@fred.com",
+                	"password": "123"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://workspace.dinizeotecnologia.com.br/worldskills/jwt/validate_token
+            name: "Endpoint #02"
+            meta:
+              id: req_7767a97aa67243bba236648d8e322a7c
+              created: 1753732095525
+              modified: 1754340133046
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450820
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                	"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJmcmVkQGZyZWQuY29tIiwiaWF0IjoxNzU0MzM5MzM4LCJleHAiOjE3NTQzNDI5MzgsIm5hbWUiOiJGcmVkIn0.Ga2bIieXcchfxheJ0EuSW6_hjPN4Xl5Siz_6CCNeCzU"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/motd
+            name: "Endpoint #03"
+            meta:
+              id: req_0c5e1af7b9194b938b74889a20bc6dd8
+              created: 1753732232838
+              modified: 1754340135313
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450795
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "https://workspace.dinizeotecnologia.com.br/worldskills/A2/school_list "
+            name: "Endpoint #04"
+            meta:
+              id: req_62f16d0ef8cf4db2a7846b04c9c71dd4
+              created: 1753732310570
+              modified: 1754340138348
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450782.5
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/comments
+            name: "Endpoint #05"
+            meta:
+              id: req_cee1a8d512124b0e8b3e7d69df0f352d
+              created: 1753732352662
+              modified: 1754340143065
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450776.25
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/comments
+            name: "Endpoint #05"
+            meta:
+              id: req_f0df87d844344dea844c5e18c7969abf
+              created: 1753732416332
+              modified: 1754340145252
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450773.125
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"id_escola": "1","comentario": "Muito boa"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/prints
+            name: "Endpoint #06"
+            meta:
+              id: req_dfb9aa39a4704b71b10776820feb4595
+              created: 1753732489593
+              modified: 1754340147836
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450771.5625
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/prints
+            name: "Endpoint #06"
+            meta:
+              id: req_26d08e2f514248d495907b904b12a447
+              created: 1753732599185
+              modified: 1754337461631
+              isPrivate: false
+              description: ""
+              sortKey: -1754337450770
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_0217a2713b9449219dacb319b22c1132
+                  name: id_user
+                  value: "3"
+                  description: ""
+                  disabled: false
+                - id: pair_8245ffb60d8c4fc0a63ab8c537e0000a
+                  name: imagem
+                  value: ""
+                  description: ""
+                  disabled: false
+                  type: file
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Local
+        meta:
+          id: fld_08a6079d14a5463bb69194e0f1e62c0f
+          created: 1754337441448
+          modified: 1754337441448
+          sortKey: -1754337441448
+          description: ""
+        children:
+          - url: http://localhost:4000/api/login
+            name: "Endpoint #01"
+            meta:
+              id: req_98eb3e01cf64448995046a3cea5239f5
+              created: 1754337483689
+              modified: 1754340065588
+              isPrivate: false
+              description: ""
+              sortKey: -1754337747013
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email": "fred@fred.com",
+                	"password": "123"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:4000
+            name: TESTE
+            meta:
+              id: req_8bb0e5c11c8b4e389960d20e615a20f9
+              created: 1754337750616
+              modified: 1754337757441
+              isPrivate: false
+              description: ""
+              sortKey: -1754337750616
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:4000/api/users
+            name: NovoUsuário
+            meta:
+              id: req_c1b442276f564ae9bef09ad48343330e
+              created: 1754337959370
+              modified: 1754340379536
+              isPrivate: false
+              description: ""
+              sortKey: -1754337748814.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name": "Maria",
+                	"email": "maria@fred.com",
+                	"password": "123"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:4000/api/users
+            name: ListarUsers
+            meta:
+              id: req_d54248f863f74182b79dc49821729324
+              created: 1754338640392
+              modified: 1754340557228
+              isPrivate: false
+              description: ""
+              sortKey: -1754337749715.25
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.4.0
+            authentication:
+              type: bearer
+              token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkZyZWQiLCJlbWFpbCI6ImZyZWRAZnJlZC5jb20iLCJpYXQiOjE3NTQzNDA0NzAsImV4cCI6MTc1NDM0NDA3MH0.kDZY6gy35wXuFdEcPk-DHORkWSd5fBJeR32TK9FVp_s
+              disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:4000/api/validate
+            name: "Endpoint #02"
+            meta:
+              id: req_14f112f2081b4f1db5b72304db4df489
+              created: 1754338712466
+              modified: 1754340498923
+              isPrivate: false
+              description: ""
+              sortKey: -1754337598891.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: >-
+                {
+                	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkZyZWQiLCJlbWFpbCI6ImZyZWRAZnJlZC5jb20iLCJpYXQiOjE3NTQzNDA0NzAsImV4cCI6MTc1NDM0NDA3MH0.kDZY6gy35wXuFdEcPk-DHORkWSd5fBJeR32TK9FVp_s"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
   - name: 1sem2025
     meta:
-      id: fld_4df983d6d7964b5581e5b4d988c54c18
-      created: 1753871932642
-      modified: 1753871946840
-      sortKey: -1753871932642
+      id: fld_cacf3adb142841cea6f7ef9fd1195d6f
+      created: 1754050004292
+      modified: 1754050054955
+      sortKey: -1753414648645.5
       description: ""
     children:
       - name: Restaurante
         meta:
-          id: fld_a90098ac2d214256be05bd163994eca0
+          id: fld_4ba31d136942413a91ff46cdb688eb57
           created: 1740747710762
-          modified: 1753872081288
-          sortKey: -1753871943550
+          modified: 1754050017455
+          sortKey: -1754050015175
           description: ""
         scripts:
           afterResponse: ""
           preRequest: ""
-      - name: PetShop
-        meta:
-          id: fld_6b87a1251262419eaa257128ef8eab64
-          created: 1742910480758
-          modified: 1753872085825
-          sortKey: -1753871943650
-          description: ""
-        children:
-          - name: Cliente
-            meta:
-              id: fld_abc053829e1c4cc8875c13828e3546e8
-              created: 1742910532853
-              modified: 1742931421253
-              sortKey: -1742910532853
-              description: ""
-          - name: Telefone
-            meta:
-              id: fld_a17cbcc1e23b450fb0597eca1f0392cf
-              created: 1742921595646
-              modified: 1742922954290
-              sortKey: -1742910526341.125
-              description: ""
-          - name: Pedido
-            meta:
-              id: fld_1653b6d49c84483fbcabf6766f752c7a
-              created: 1742922450835
-              modified: 1742922450835
-              sortKey: -1742910519829.25
-              description: ""
       - name: Escola
         meta:
-          id: fld_29e30b91b2024e26a01879628bcb742f
-          created: 1744220477468
-          modified: 1753872015842
-          sortKey: -1753871943450
-          description: ""
-        children:
-          - name: Aluno
-            meta:
-              id: fld_b08a1057c5c44d438a2d4c94d51632b4
-              created: 1744220485851
-              modified: 1744220485851
-              sortKey: -1744220485851
-              description: ""
-          - name: Professor
-            meta:
-              id: fld_c4a13ae2cf0e4117853006e32880b6ef
-              created: 1744221828381
-              modified: 1744221828381
-              sortKey: -1744220481659.5
-              description: ""
-          - name: Turma
-            meta:
-              id: fld_a5532be6293a4df798d21635e8d88546
-              created: 1744221944941
-              modified: 1744221944941
-              sortKey: -1744220479563.75
-              description: ""
-          - name: Disciplina
-            meta:
-              id: fld_dbd5c7c4766e4a22a8c5fcd1857c7276
-              created: 1744222060691
-              modified: 1744222060691
-              sortKey: -1744220478515.875
-              description: ""
-          - name: Matricula
-            meta:
-              id: fld_f79f01bd979c4a2090775daa50e7184e
-              created: 1744222178387
-              modified: 1744222178387
-              sortKey: -1744220477991.9375
-              description: ""
-      - name: Gof
-        meta:
-          id: fld_b3ba838c6dd244d2b8332e44f2d69aa8
-          created: 1744630709013
-          modified: 1753872012947
-          sortKey: -1753871943350
+          id: fld_830f1ea740644a4c98777b5fb867c73c
+          created: 1741616489807
+          modified: 1754050015096
+          sortKey: -1754050015075
           description: ""
         scripts:
           afterResponse: ""
           preRequest: ""
       - name: Pizzaria
         meta:
-          id: fld_49fe1e0b9e5540e5952d069e07b9de94
-          created: 1744715501812
-          modified: 1753872009672
-          sortKey: -1753871943250
+          id: fld_6de4b852ae274dac9bd0ddf5d2cddcaf
+          created: 1742823883717
+          modified: 1754050039069
+          sortKey: -1754050015775
           description: ""
-        children:
-          - name: Cliente
-            meta:
-              id: fld_93d3599a6ed54d48a74372be22e01a32
-              created: 1744715570280
-              modified: 1744715570280
-              sortKey: -1744715570280
-              description: ""
-          - name: Pizza
-            meta:
-              id: fld_b8e47f6777f94dc189cfa1eadaacc3df
-              created: 1744716136403
-              modified: 1744716136403
-              sortKey: -1744715536046
-              description: ""
-          - name: Pedido
-            meta:
-              id: fld_ed2688159afb4e068bb397c345a68541
-              created: 1744716606589
-              modified: 1744720076556
-              sortKey: -1744715518929
-              description: ""
-          - name: Item
-            meta:
-              id: fld_a85acf383f594a759b14139d585b6d22
-              created: 1744716802255
-              modified: 1744716802255
-              sortKey: -1744715510370.5
-              description: ""
-      - name: Pedidos Patterns
-        meta:
-          id: fld_51ef0a00607d474cae4dd461d0e8bae7
-          created: 1745930542373
-          modified: 1753872004346
-          sortKey: -1753871943150
-          description: ""
-        children:
-          - name: Pedido
-            meta:
-              id: fld_6e6270eec37e4766a49d9805e2b8ca8a
-              created: 1745934803564
-              modified: 1745934803564
-              sortKey: -1745934803564
-              description: ""
-          - name: Item
-            meta:
-              id: fld_93a94d44984b47a5bd1f41438640a9f5
-              created: 1745935751110
-              modified: 1745935751110
-              sortKey: -1745932672968.5
-              description: ""
-      - name: app88taxi
-        meta:
-          id: fld_1994f56b63ab4f0eb1e4df57bb2d960c
-          created: 1746622072098
-          modified: 1753902965087
-          sortKey: -1753871943050
-          description: ""
-        children:
-          - name: Passageiros
-            meta:
-              id: fld_86ee3d98c7f240af969b7efc2660677e
-              created: 1746622083520
-              modified: 1746622083520
-              sortKey: -1746622083520
-              description: ""
-          - name: Motoristas
-            meta:
-              id: fld_bf071b87ba3b47c99de0010394e9ec7e
-              created: 1746623338555
-              modified: 1746623751604
-              sortKey: -1746622077809
-              description: ""
-          - name: Viagens
-            meta:
-              id: fld_7dc327ab365e4888938397b24c27c05e
-              created: 1746623719245
-              modified: 1746623719245
-              sortKey: -1746622074953.5
-              description: ""
-      - name: Login
-        meta:
-          id: fld_3af94d086efe47fe883022c0693823dc
-          created: 1749215447450
-          modified: 1753871948193
-          sortKey: -1753871942950
-          description: ""
-        children:
-          - name: local
-            meta:
-              id: fld_8e238b111e884938a6d0de64a53e3947
-              created: 1749229632159
-              modified: 1749229632159
-              sortKey: -1749229632159
-              description: ""
-            scripts:
-              afterResponse: ""
-              preRequest: ""
-          - name: remoto
-            meta:
-              id: fld_460844ef46274589860d2b1a46945596
-              created: 1749229644739
-              modified: 1749229644739
-              sortKey: -1749229644739
-              description: ""
-            scripts:
-              afterResponse: ""
-              preRequest: ""
         scripts:
           afterResponse: ""
           preRequest: ""
-      - name: pesslacamentos
+      - name: Pizzaria
         meta:
-          id: fld_1e6fcc37da904ce682f98ce524bc06f2
-          created: 1750166015306
-          modified: 1753871942891
-          sortKey: -1753871942850
+          id: fld_95aa27eda1444dbc81e67f21d87146f2
+          created: 1742823883717
+          modified: 1754050035617
+          sortKey: -1754050015675
           description: ""
-        children:
-          - name: Local
-            meta:
-              id: fld_57645201013446e6b3b2387062ecaabf
-              created: 1750254359655
-              modified: 1750254359655
-              sortKey: -1750254359655
-              description: ""
-  - name: safeedu
+        scripts:
+          afterResponse: ""
+          preRequest: ""
+      - name: Gof
+        meta:
+          id: fld_3a127cc78db64c1d9b41feebbb094e98
+          created: 1744630709013
+          modified: 1754050032469
+          sortKey: -1754050015575
+          description: ""
+        scripts:
+          afterResponse: ""
+          preRequest: ""
+      - name: Login JWT
+        meta:
+          id: fld_63b5790845c1406a9bfa54ecd64bad0b
+          created: 1747681901794
+          modified: 1754050028247
+          sortKey: -1754050015475
+          description: ""
+      - name: Login
+        meta:
+          id: fld_3d5a6a9dedb34db38e50744cad5b5ba7
+          created: 1749215447450
+          modified: 1754050026085
+          sortKey: -1754050015375
+          description: ""
+        scripts:
+          afterResponse: ""
+          preRequest: ""
+      - name: placeholder
+        meta:
+          id: fld_43cd34ef1553429b8f59c1bce701d0f3
+          created: 1753103174841
+          modified: 1754050020724
+          sortKey: -1754050015275
+          description: ""
+        scripts:
+          afterResponse: ""
+          preRequest: ""
+  - name: Pedidos-API
     meta:
-      id: fld_3c15782a92a545bda46e67d067711201
-      created: 1753903918729
-      modified: 1753903918729
-      sortKey: -1753903918729
+      id: fld_d6cd1cc584d34abead4fec708c0478ba
+      created: 1754050081189
+      modified: 1754337411891
+      sortKey: -1754050081189
       description: ""
     children:
-      - url: http://localhost:3001
-        name: TESTE
+      - name: usuarios
         meta:
-          id: req_78d63bddf7214c0b9c1e1cc5fa6da419
-          created: 1753903922808
-          modified: 1753904284588
-          isPrivate: false
+          id: fld_8bf2b3970dc742bfbab12bc46b702e29
+          created: 1754050189724
+          modified: 1754050189724
+          sortKey: -1754050189724
           description: ""
-          sortKey: -1753903922808
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-  - name: safeedu-online
-    meta:
-      id: fld_876c617335e147bd82523bfc70558209
-      created: 1753904464413
-      modified: 1753904464413
-      sortKey: -1753904464413
-      description: ""
-    children:
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/jwt/generate_token
-        name: "Endpoint #01"
+      - name: produto
         meta:
-          id: req_f311e8fdfb9a438ca9d6539229dbfd74
-          created: 1753904469219
-          modified: 1753904508088
-          isPrivate: false
+          id: fld_91e194750dad439c990d2f6feaa4bd53
+          created: 1754053638408
+          modified: 1754053638408
+          sortKey: -1754050135456.5
           description: ""
-          sortKey: -1753904469219
-        method: POST
-        body:
-          mimeType: application/json
-          text: '{"email": "fred@fred.com","password": "123"}'
-        headers:
-          - name: Content-Type
-            value: application/json
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/jwt/validate_token
-        name: "Endpoint #02"
+      - name: pedidos
         meta:
-          id: req_6e164680a6574b3db6f1db38dfc89835
-          created: 1753904600980
-          modified: 1753904643638
-          isPrivate: false
+          id: fld_e3dac2824ab4454287831880d0f49c21
+          created: 1754053876724
+          modified: 1754053876724
+          sortKey: -1754050108322.75
           description: ""
-          sortKey: -1753904196013.5
-        method: POST
-        body:
-          mimeType: application/json
-          text: |
-            {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJmcmVkQGZyZWQuY29tIiwiaWF0IjoxNzUzOTA0NDE2LCJleHAiOjE3NTM5MDgwMTYsIm5hbWUiOiJGcmVkIn0.aQHpKd2phwKx91bobNkSHn_jdeY_15nZRYXin_EyHFU"}
-        headers:
-          - name: Content-Type
-            value: application/json
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/motd
-        name: "Endpoint #03"
-        meta:
-          id: req_aa9efb8bcefb49f6ae6205f90ccb41f3
-          created: 1753904689864
-          modified: 1753904726035
-          isPrivate: false
-          description: ""
-          sortKey: -1753904195913.5
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/school_list
-        name: "Endpoint #04"
-        meta:
-          id: req_b32faaef7fcd48e88658b41566a1a3da
-          created: 1753904784505
-          modified: 1753904802770
-          isPrivate: false
-          description: ""
-          sortKey: -1753904059360.75
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/comments
-        name: "Endpoint #05"
-        meta:
-          id: req_96855e18940447a2a2813c37adc90e13
-          created: 1753905271396
-          modified: 1753905311233
-          isPrivate: false
-          description: ""
-          sortKey: -1753904059260.75
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/comments
-        name: "Endpoint #05"
-        meta:
-          id: req_50c5c17c61b74041b675e7e566792515
-          created: 1753905315957
-          modified: 1753905333979
-          isPrivate: false
-          description: ""
-          sortKey: -1753903991034.375
-        method: POST
-        body:
-          mimeType: application/json
-          text: '{"id_escola": "3","comentario": "Muito boa"}'
-        headers:
-          - name: Content-Type
-            value: application/json
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/prints
-        name: "Endpoint #06"
-        meta:
-          id: req_626965b09b3f4788b898784d51aa8e28
-          created: 1753905515073
-          modified: 1753905526843
-          isPrivate: false
-          description: ""
-          sortKey: -1753903956921.1875
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: https://workspace.dinizeotecnologia.com.br/worldskills/A2/prints
-        name: "Endpoint #06"
-        meta:
-          id: req_9ef388c2f6b7471dbbd0a9a5538d8685
-          created: 1753905696342
-          modified: 1753905730974
-          isPrivate: false
-          description: ""
-          sortKey: -1753903939864.5938
-        method: POST
-        body:
-          mimeType: multipart/form-data
-          params:
-            - id: pair_6ed7650642064d089f20aa8af6edec4e
-              name: id_user
-              value: "3"
-              description: ""
-              disabled: false
-            - id: pair_b00fc98ac77f484d8d9eaf92e4adbc39
-              name: imagem
-              value: ""
-              description: ""
-              disabled: false
-              type: file
-        headers:
-          - name: Content-Type
-            value: multipart/form-data
-          - name: User-Agent
-            value: insomnia/11.3.0
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
     id: jar_99d30891da4bdcebc63947a8fc17f076de878684
-    created: 1741785010824
-    modified: 1753878656694
+    created: 1743787599988
+    modified: 1753720385883
   cookies:
     - key: accessToken
-      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NTM4Nzg1NjIsImV4cCI6MTc1Mzg3ODYyMn0.EAVt7f5AGM8SwNlTXmaik8PRc10OiVualnIvAZxyASs
-      maxAge: 60
       domain: dummyjson.com
       path: /
-      secure: true
-      httpOnly: true
       hostOnly: true
-      creation: 2025-07-29T11:41:32.844Z
-      lastAccessed: 2025-07-30T12:30:56.694Z
-      id: 4b0f9cb7-adb8-4aae-9bff-fd63acfdbad7
+      creation: 2025-07-28T16:32:51.929Z
+      lastAccessed: 2025-07-28T16:33:05.883Z
+      id: 8f956bf7-59f4-4f3d-9a35-670d96b99c98
     - key: refreshToken
-      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NTM4Nzg1NjIsImV4cCI6MTc1NjQ3MDU2Mn0.DvOm_hjqfZxeRgPNi5WhIvsFodBbQDD-8dt71-eQYe8
-      maxAge: 60
       domain: dummyjson.com
       path: /
-      secure: true
-      httpOnly: true
       hostOnly: true
-      creation: 2025-07-29T11:41:32.845Z
-      lastAccessed: 2025-07-30T12:30:56.694Z
-      id: f43ef831-a4a0-4836-9571-d3eb6076e1ec
+      creation: 2025-07-28T16:32:51.931Z
+      lastAccessed: 2025-07-28T16:33:05.883Z
+      id: f0375979-8a92-4a9d-b8f4-64c7fc80d25d
 environments:
   name: Base Environment
   meta:
     id: env_99d30891da4bdcebc63947a8fc17f076de878684
-    created: 1741785010734
-    modified: 1741785010734
+    created: 1743787599979
+    modified: 1743787599979
     isPrivate: false
