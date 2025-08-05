@@ -7,6 +7,7 @@ const users = require("./seed/users.json");
 const motds = require("./seed/motds.json");
 const escolas = require("./seed/escolas.json");
 const comentarios = require("./seed/comentarios.json");
+const imagens = require("./seed/imagens.json");
 
 
 async function main() {
@@ -28,6 +29,18 @@ async function main() {
     for (const user of users) {
         await prisma.user.create({
             data: user
+        });
+    }
+    for (const imagem of imagens) {
+        //Converte o campo imagem de base64 para Prisma Bytes
+        let imagemData = { ...imagem };
+        if (imagem.imagem && typeof imagem.imagem === 'string') {
+            // Remove prefixo se existir
+            const base64 = imagem.imagem.split(',').pop();
+            imagemData.imagem = Buffer.from(base64, 'base64');
+        }
+        await prisma.imagem.create({
+            data: imagemData
         });
     }
 }

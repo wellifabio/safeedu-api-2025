@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolas</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    fetch('http://localhost:4000/api/escolas')
+        .then(response => response.json())
+        .then(data => {
+            const escolasList = document.querySelector('body');
+            data.forEach(escola => {
+                const card = document.createElement('div');
+                card.innerHTML = `
+                    <h2>${escola.nome}</h2>
+                    <p>Avaliação: ${escola.avaliacao.toFixed(1)}</p>
+                    <p>Latitude: ${escola.latitude}</p>
+                    <p>Longitude: ${escola.longitude}</p>
+                    <img src="${escola.image}" alt="Imagem da escola" style="width: 500px;">
+                `;
+                escolasList.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Error fetching escolas:', error));   
+</script>
+
+</html>

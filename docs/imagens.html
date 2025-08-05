@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagens</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    fetch('http://localhost:4000/api/imagens')
+        .then(response => response.json())
+        .then(data => {
+            const escolasList = document.querySelector('body');
+            data.imagens.forEach(imagem => {
+                const card = document.createElement('div');
+                card.innerHTML = `
+                    <img src="${imagem.imagem}" alt="Imagem">
+                `;
+                escolasList.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Error fetching imagens:', error));   
+</script>
+
+</html>

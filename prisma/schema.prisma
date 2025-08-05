@@ -19,7 +19,7 @@ model Escola {
   id          Int          @id @default(autoincrement())
   nome        String
   avaliacao   Int
-  image       String @db.LongText
+  image       String       @db.LongText
   latitude    Float
   longitude   Float
   comentarios Comentario[]
@@ -35,4 +35,10 @@ model Comentario {
 
 model Motd {
   MOTD String @id @db.VarChar(255)
+}
+
+model Imagem {
+  id          Int      @id @default(autoincrement())
+  data_upload DateTime @default(now())
+  imagem     Bytes       @db.MediumBlob
 }
