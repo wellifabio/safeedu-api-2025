@@ -1,9 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+
 const app = express();
 
+const swaggerDoc = require('./swagger.json');
 const router = require('./src/router');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 app.use(cors());
 app.use(express.json());
@@ -11,4 +15,5 @@ app.use(router);
 
 app.listen(process.env.PORT,()=>{
     console.log('API SafeEdu respondendo em http://localhost:'+process.env.PORT);
+    console.log('Acesse a documentação em http://localhost:'+process.env.PORT+"/api-docs");
 });

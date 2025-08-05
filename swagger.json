@@ -1,0 +1,196 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "SafeEdu - API",
+        "version": "1.0.0",
+        "description": "Documentação, Tecnologias: Node.js, Prisma, XAMPP(MySQL[MariaDB])<br>Desenvolvida para treinamento simulado BR Skills SENAI 2025.",
+        "contact": {
+            "name": "Instrutor Wellington SESI/SENAI",
+            "email": "wellington.martins@sp.senai.br",
+            "url": "https://github.com/wellifabio"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:4000",
+            "description": "Servidor local"
+        }
+    ],
+    "securityDefinitions": {
+        "bearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer token para autenticação",
+            "scheme": "bearer",
+            "bearer format": "JWT",
+            "bearer token": "JWT <token>",
+            "bearer token description": "Bearer token para autenticação"
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearer format": "JWT"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Teste",
+            "description": "Endpoint de teste da API"
+        },
+        {
+            "name": "Endpoit #01",
+            "description": "Endpoints de login e Lista de usuários"
+        },
+        {
+            "name": "Endpoit #02",
+            "description": "Endpoints de validar token"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "Teste"
+                ],
+                "summary": "Endpoint de teste geral da API",
+                "responses": {
+                    "200": {
+                        "description": "Retorna uma mensagem de teste"
+                    },
+                    "500": {
+                        "description": "Erro ao processar a requisição"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Endpoit #01"
+                ],
+                "summary": "Endpoint para fazer o login",
+                "requestBody": {
+                    "description": "Dados de login",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "default": "maria@email.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "default": "senha123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login realizado com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro ao fazer login, verifique e-mail e senha"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Endpoit #01"
+                ],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Endpoint para obter todos os usuários",
+                "responses": {
+                    "200": {
+                        "description": "Lista de usuários cadastrados"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Endpoit #01"
+                ],
+                "summary": "Endpoint para criar um novo usuário",
+                "requestBody": {
+                    "description": "Dados do usuário",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "default": "Frederico"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "default": "frederico@email.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "default": "123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuário criado com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro ao criar usuário, verifique os dados"
+                    }
+                }
+            }
+        },
+        "/api/validate": {
+            "post": {
+                "tags": [
+                    "Endpoit #02"
+                ],
+                "summary": "Endpoint para validar o login",
+                "requestBody": {
+                    "description": "Dados do usuário",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "token": {
+                                        "type": "string",
+                                        "default": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6Ik1hcmlhIiwiZW1haWwiOiJtYXJpYUBlbWFpbC5jb20iLCJpYXQiOjE3NTQ0MDQxNjgsImV4cCI6MTc1NDQwNzc2OH0.A_iyUNHAS2D46DyKIum2nTzzf8RyzO97r-C6JNl2KVQ"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Token validade com sucesso"
+                    },
+                    "401": {
+                        "description": "Token inválido ou expirado"
+                    }
+                }
+            }
+        }
+    }
+}

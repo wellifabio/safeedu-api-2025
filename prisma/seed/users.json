@@ -3,5 +3,10 @@
         "name": "Fred",
         "email": "fred@fred.com",
         "password": "$2b$10$EhGAuhpMhk.euoP5p11RBeWgF8rwiNFjoQsIdEs6FhPFpWCeknBeS"
+    },
+    {
+        "name": "Maria",
+        "email": "maria@email.com",
+        "password": "$2b$10$xwzqCJdZ8n0ZaD/kSd/i3e4jrN2xWYUQR3jTEls4shLIs7Ja5V65G"
     }
 ]

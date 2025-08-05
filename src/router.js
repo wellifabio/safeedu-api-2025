@@ -13,7 +13,5 @@ routes.post('/api/login', User.login);
 routes.post('/api/validate', User.validaToken);
 routes.get('/api/users', MiddlewareAuth.validate, User.read);
 routes.post('/api/users', User.create);
-routes.patch('/api/users/:id', MiddlewareAuth.validate, User.update);
-routes.delete('/api/users/:id', MiddlewareAuth.validate, User.del);
 
 module.exports = routes;
