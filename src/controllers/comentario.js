@@ -11,11 +11,12 @@ const read = async (req, res) => {
 }
 
 const create = async (req, res) => {
+    req.body.id_escola = Number(req.body.id_escola)
     try {
         const comentario = await prisma.comentario.create({
             data: req.body
         });
-        res.status(201).json(comentario);
+        res.status(201).json({success: true, id_comentario: comentario.id});
     } catch (error) {
         res.status(500).json({ error: 'Erro ao criar comentario' });
     }
